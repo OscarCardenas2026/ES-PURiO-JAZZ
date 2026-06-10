@@ -32,13 +32,9 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .logo-container {
-            margin-bottom: 20px;
-        }
-
         .logo {
             max-width: 500px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
         }
 
         .logo img {
@@ -66,7 +62,7 @@
 
         section {
             background: white;
-            padding: 40px;
+            padding: 30px;
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -82,20 +78,21 @@
 
         h3 {
             color: #7c3aed;
-            font-size: 1.5em;
-            margin: 30px 0 15px 0;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-align: justify;
+            font-size: 0.95em;
         }
 
         .members-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
         }
 
         .member-card {
@@ -103,28 +100,25 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
         }
 
         .member-photo {
             width: 100%;
-            height: 350px;
+            height: 300px;
             object-fit: cover;
             background: #e2e8f0;
         }
 
         .member-info {
-            padding: 20px;
+            padding: 15px;
+            flex: 1;
         }
 
         .member-name {
             color: #5a67d8;
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 5px;
             text-align: center;
@@ -134,14 +128,17 @@
             color: #7c3aed;
             text-align: center;
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
+            font-size: 0.9em;
         }
 
         .member-bio {
             text-align: justify;
-            font-size: 0.95em;
-            line-height: 1.6;
+            font-size: 0.85em;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
         .social-links {
@@ -166,22 +163,26 @@
 
         .highlight {
             background: #f7fafc;
-            padding: 20px;
+            padding: 15px;
             border-left: 4px solid #5a67d8;
-            margin: 20px 0;
+            margin: 15px 0;
             border-radius: 5px;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             background: white;
             color: #718096;
             border-radius: 10px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .title-main {
                 font-size: 1.8em;
             }
@@ -198,20 +199,14 @@
             section {
                 padding: 20px;
             }
-            
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="logo.png" alt="ES PURiO JAZZ quarteto Logo">
-                </div>
+            <div class="logo">
+                <img src="logo.png" alt="ES PURiO JAZZ quarteto Logo">
             </div>
             <h1 class="title-main">ES PURiO JAZZ</h1>
             <span class="title-sub">quarteto</span>
@@ -225,16 +220,13 @@
                 <p><strong>ES PURiO JAZZ quarteto</strong> toma el nombre de la aparente dicotomía existente entre las expresiones artísticas de la música de concierto y el jazz así como entre los músicos que las producen. Este juego de palabras que forma el nombre de la agrupación, cobra sentido al hacer alusión a la manera de combinar los elementos de la música de concierto y del jazz en un todo orgánico.</p>
             </div>
 
-            <p>Hay numerosos ejemplos que constatan que cada vez están más cercanas ambas particulares maneras de organizar a los sonidos de estos géneros, como la primera obra seleccionada para el repertorio de ES PURiO JAZZ quarteto, el <em>Concerto for Classical Guitar and Piano Jazz</em>, del compositor francés Claude Bolling, quien en su momento fuera criticado por profesionales de la música tanto jazzistas como concertistas por el maridaje de elementos de la música clásica con el jazz, utilizados en prácticamente toda su obra.</p>
+            <p>Hay numerosos ejemplos que constatan que cada vez están más cercanas ambas particulares maneras de organizar a los sonidos de estos géneros, como la primera obra seleccionada para el repertorio de ES PURiO JAZZ quarteto, el <em>Concerto for Classical Guitar and Piano Jazz</em>, del compositor francés Claude Bolling.</p>
 
             <h3>Trayectoria</h3>
             <p>ES PURiO JAZZ quarteto ha ofrecido conciertos en diversas salas de la Ciudad de México, tales como la Sala Chopin, la sala Hermilio Novelo del Conjunto Cultural Ollin Yoliztli, en el Teatro Ángela Peralta de San Miguel de Allende, Gto., en la Mina Prehispánica de Taxco, Gro., y para la grabación de un video, en la sala Nezahualcóyotl del Centro Cultural Universitario y en el Lunario.</p>
 
             <h3>Producciones Discográficas</h3>
             <p>Tiene esta agrupación dos producciones discográficas. La primera <strong>"ES PURiO JAZZ"</strong>, contiene la obra mencionada de Claude Bolling y la segunda <strong>"Teine"</strong>, con una selección de obras del género del jazz además de tres obras originales, que ya se puede adquirir en tiendas y conciertos.</p>
-
-            <h3>Objetivo</h3>
-            <p>ES PURiO JAZZ quarteto, se ha propuesto como objetivo la difusión particular de la música que tiene esta característica: la de compartir elementos de la música clásica y del jazz con la dotación instrumental del cuarteto en su repertorio, incluyendo música mexicana original.</p>
 
             <div class="social-links">
                 <p><strong>Síguenos en:</strong></p>
@@ -246,21 +238,21 @@
             <h2>Integrantes</h2>
             <div class="members-grid">
                 <div class="member-card">
-                    <img src="oscar-cardenas.jpg" alt="Óscar Cárdenas" class="member-photo" onerror="this.src='https://via.placeholder.com/400x350?text=Óscar+Cárdenas'">
+                    <img src="oscar-cardenas.jpg" alt="Óscar Cárdenas" class="member-photo">
                     <div class="member-info">
                         <div class="member-name">ÓSCAR CÁRDENAS</div>
                         <div class="member-instrument">Guitarra</div>
                         <div class="member-bio">
                             <p>Es compositor y guitarrista mexicano, titulado de la ahora Facultad de Música de la UNAM. Es creador de música de cámara que incluye a la guitarra como solista o como parte de alguna agrupación, además de otros instrumentos, como el cuarteto de saxofones, piano, orquesta y la dotación instrumental de ES PURiO JAZZ quarteto.</p>
                             <p>Como guitarrista tiene premios nacionales, como el primer lugar en el XIX Concurso Nacional de Guitarra en Paracho, Mich., con una mención otorgada por el compositor mexicano Julio César Oliva a la mejor interpretación de su obra.</p>
-                            <p>Se ha presentado en las salas más importantes de la Ciudad de México así como del interior de la república, además de las Ciudades de Belice y Belmopán, como guitarrista invitado a un ciclo de músicos mexicanos en el país de Belice.</p>
+                            <p>Se ha presentado en las salas más importantes de la Ciudad de México así como del interior de la república, además de las Ciudades de Belice y Belmopán.</p>
                             <p>Ha tomado clases magistrales con Iván Rijos, Alirio Díaz, Leo Brouwer, Franz Bungarten, Guillermo González, Julio César Oliva, por mencionar algunos. Tiene dos producciones discográficas independientes, "Óscar Cárdenas en Concierto" que incluye algunas obras de su autoría y obras del repertorio de la guitarra clásica y "Frente al Espejo" con obras exclusivamente de su autoría.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="member-card">
-                    <img src="mireya-gonzalez.jpg" alt="Mireya González" class="member-photo" onerror="this.src='https://via.placeholder.com/400x350?text=Mireya+González'">
+                    <img src="mireya-gonzalez.jpg" alt="Mireya González" class="member-photo">
                     <div class="member-info">
                         <div class="member-name">MIREYA GONZÁLEZ</div>
                         <div class="member-instrument">Piano</div>
@@ -274,7 +266,7 @@
                 </div>
 
                 <div class="member-card">
-                    <img src="bogdan-chavez.jpg" alt="Bogdan Chávez" class="member-photo" onerror="this.src='https://via.placeholder.com/400x350?text=Bogdan+Chávez'">
+                    <img src="bogdan-chavez.jpg" alt="Bogdan Chávez" class="member-photo">
                     <div class="member-info">
                         <div class="member-name">BOGDAN CHÁVEZ</div>
                         <div class="member-instrument">Batería</div>
@@ -288,7 +280,7 @@
                 </div>
 
                 <div class="member-card">
-                    <img src="víctor-flores.jpg" alt="Víctor Flores" class="member-photo" onerror="this.src='https://via.placeholder.com/400x350?text=Víctor+Flores'">
+                    <img src="victor-flores.jpg" alt="Víctor Flores" class="member-photo">
                     <div class="member-info">
                         <div class="member-name">VÍCTOR FLORES</div>
                         <div class="member-instrument">Contrabajo</div>
