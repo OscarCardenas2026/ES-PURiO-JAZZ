@@ -15,23 +15,30 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-            background-attachment: fixed;
+            background: 
+                linear-gradient(135deg, rgba(240,244,248,0.85) 0%, rgba(217,226,236,0.85) 100%),
+                url('fondo-izquierdo.jpg') left center no-repeat fixed,
+                url('fondo-derecho.jpg') right center no-repeat fixed;
+            background-size: auto 100%, auto 100%, auto 100%;
             min-height: 100vh;
+            position: relative;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         header {
             text-align: center;
             padding: 40px 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             margin-bottom: 30px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
 
         .logo {
@@ -63,11 +70,13 @@
         }
 
         section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
         }
 
         h2 {
@@ -260,10 +269,12 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             color: #718096;
             border-radius: 10px;
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         @media (max-width: 768px) {
@@ -286,6 +297,11 @@
             
             section {
                 padding: 20px;
+            }
+
+            body {
+                background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+                background-attachment: fixed;
             }
         }
     </style>
@@ -420,16 +436,16 @@
             </div>
         </section>
 
-       <footer>
-    <div style="text-align: center; margin-bottom: 20px;">
-        <a href="https://info.flagcounter.com/45Sr">
-            <img src="https://s01.flagcounter.com/count/45Sr/bg_F7FAFC/txt_5A67D8/border_E2E8F0/columns_5/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" 
-                 alt="Flag Counter" border="0">
-        </a>
-    </div>
-    <p>&copy; 2026 ES PURiO JAZZ quarteto. Todos los derechos reservados.</p>
-    <p>Música que fusiona lo clásico con el jazz</p>
-</footer>
+        <footer>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://info.flagcounter.com/45Sr">
+                    <img src="https://s01.flagcounter.com/count/45Sr/bg_F7FAFC/txt_5A67D8/border_E2E8F0/columns_5/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" 
+                         alt="Flag Counter" border="0">
+                </a>
+            </div>
+            <p>&copy; 2026 ES PURiO JAZZ quarteto. Todos los derechos reservados.</p>
+            <p>Música que fusiona lo clásico con el jazz</p>
+        </footer>
     </div>
 </body>
 </html>
