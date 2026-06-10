@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES PURiO JAZZ quarteto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .member-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: #ddd;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-name {
+            color: #667eea;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .member-instrument {
+            color: #764ba2;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .member-bio {
+            text-align: justify;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #667eea20 0%, #764ba220 100%);
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            color: #666;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="ES PURiO JAZZ quarteto Logo">
+            </div>
+            <h1>ES PURiO JAZZ</h1>
+            <p class="subtitle">quarteto</p>
+        </header>
+
+        <section id="about">
+            <h2>Sobre el Cuarteto</h2>
+            <p>Esta agrupación musical está conformada por los músicos mexicanos <strong>Mireya González</strong> al piano, <strong>Óscar Cárdenas</strong> en la guitarra, <strong>Bogdan Chávez</strong> en la batería y <strong>Víctor Flores</strong> en el contrabajo. Todos ellos con una gran trayectoria como músicos profesionales.</p>
+            
+            <div class="highlight">
+                <p><strong>ES PURiO JAZZ quarteto</strong> toma el nombre de la aparente dicotomía existente entre las expresiones artísticas de la música de concierto y el jazz así como entre los músicos que las producen. Este juego de palabras que forma el nombre de la agrupación, cobra sentido al hacer alusión a la manera de combinar los elementos de la música de concierto y del jazz en un todo orgánico.</p>
+            </div>
+
+            <p>Hay numerosos ejemplos que constatan que cada vez están más cercanas ambas particulares maneras de organizar a los sonidos de estos géneros, como la primera obra seleccionada para el repertorio de ES PURiO JAZZ quarteto, el <em>Concerto for Classical Guitar and Piano Jazz</em>, del compositor francés Claude Bolling, quien en su momento fuera criticado por profesionales de la música tanto jazzistas como concertistas por el maridaje de elementos de la música clásica con el jazz, utilizados en prácticamente toda su obra.</p>
+
+            <h3>Trayectoria</h3>
+            <p>ES PURiO JAZZ quarteto ha ofrecido conciertos en diversas salas de la Ciudad de México, tales como la Sala Chopin, la sala Hermilio Novelo del Conjunto Cultural Ollin Yoliztli, en el Teatro Ángela Peralta de San Miguel de Allende, Gto., en la Mina Prehispánica de Taxco, Gro., y para la grabación de un video, en la sala Nezahualcóyotl del Centro Cultural Universitario y en el Lunario.</p>
+
+            <h3>Producciones Discográficas</h3>
+            <p>Tiene esta agrupación dos producciones discográficas. La primera <strong>"ES PURiO JAZZ"</strong>, contiene la obra mencionada de Claude Bolling y la segunda <strong>"Teine"</strong>, con una selección de obras del género del jazz además de tres obras originales, que ya se puede adquirir en tiendas y conciertos.</p>
+
+            <h3>Objetivo</h3>
+            <p>ES PURiO JAZZ quarteto, se ha propuesto como objetivo la difusión particular de la música que tiene esta característica: la de compartir elementos de la música clásica y del jazz con la dotación instrumental del cuarteto en su repertorio, incluyendo música mexicana original.</p>
+
+            <div class="social-links">
+                <p><strong>Síguenos en:</strong></p>
+                <a href="https://facebook.com" target="_blank">Facebook: ES PURiO JAZZ quarteto</a>
+            </div>
+        </section>
+
+        <section id="members">
+            <h2>Integrantes</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <img src="oscar-cardenas.jpg" alt="Óscar Cárdenas" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-name">ÓSCAR CÁRDENAS</div>
+                        <div class="member-instrument">Guitarra</div>
+                        <div class="member-bio">
+                            <p>Es compositor y guitarrista mexicano, titulado de la ahora Facultad de Música de la UNAM. Es creador de música de cámara que incluye a la guitarra como solista o como parte de alguna agrupación, además de otros instrumentos, como el cuarteto de saxofones, piano, orquesta y la dotación instrumental de ES PURiO JAZZ quarteto.</p>
+                            <p>Como guitarrista tiene premios nacionales, como el primer lugar en el XIX Concurso Nacional de Guitarra en Paracho, Mich., con una mención otorgada por el compositor mexicano Julio César Oliva a la mejor interpretación de su obra.</p>
+                            <p>Se ha presentado en las salas más importantes de la Ciudad de México así como del interior de la república, además de las Ciudades de Belice y Belmopán, como guitarrista invitado a un ciclo de músicos mexicanos en el país de Belice.</p>
+                            <p>Ha tomado clases magistrales con Iván Rijos, Alirio Díaz, Leo Brouwer, Franz Bungarten, Guillermo González, Julio César Oliva, por mencionar algunos. Tiene una producción discográfica independiente que incluye obras de su autoría.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="mireya-gonzalez.jpg" alt="Mireya González" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-name">MIREYA GONZÁLEZ</div>
+                        <div class="member-instrument">Piano</div>
+                        <div class="member-bio">
+                            <p>Desde pequeña, Mireya manifestó un talento natural para la música, motivada por un ambiente musical familiar, que la llevó a decidir muy pronto sus objetivos de vida: estudiar música.</p>
+                            <p>Con una voluntad férrea y con un objetivo claro, avanzó en sus estudios rápidamente, desarrollando sensibilidad y técnica orientadas por sus primeros profesores Eduardo Caballero y Saúl Rocha, iniciando con órgano melódico y especializándose en piano.</p>
+                            <p>Al ingresar a la ahora Facultad de Música de la UNAM, encontró la dirección, la motivación y el apoyo de la Maestra Ma. Pilar Vidal Álvarez, quien influyó de manera determinante en su formación profesional, hasta obtener el grado de licenciada en piano.</p>
+                            <p>Se ha presentado en conciertos como solista en salas como Ollin Yoliztli, Carlos Chávez, Sala Xochipilli, Sala Huehuecóyotl, entre otras y con distintas agrupaciones, en diversos foros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="bogdan-chavez.jpg" alt="Bogdan Chávez" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-name">BOGDAN CHÁVEZ</div>
+                        <div class="member-instrument">Batería</div>
+                        <div class="member-bio">
+                            <p>Baterista y productor mexicano, comenzó su carrera musical a temprana edad. Cursó sus primeros estudios musicales en la Escuela de Iniciación del INBA, posteriormente tomó clases con el profesor Jorge González y fue alumno del Taller de Jazz, impartido en el Escuela Superior de Música.</p>
+                            <p>Continuó su formación con miras a perfeccionar su técnica, bajo la tutela de diversos bateristas, tales como Horacio "el negro" Hernández y Ruy López Nussa, a quien conoció en una gira en la Ciudad de la Habana, Cuba.</p>
+                            <p>Como músico profesional se ha mantenido fuertemente activo, participando en distintos proyectos de música popular, ofreciendo giras nacionales e internacionales, así como múltiples obras teatrales. Ha grabado música para películas, jingles y más de 30 discos, además de dar clases particulares y en la Escuela Sala Chopin desde 2005.</p>
+                            <p>Incursionó en la producción musical con su estudio de grabación BOGDRUM, que ya cuenta con un catálogo considerable, incluyendo el disco de ES PURiO JAZZ quarteto, agrupación de la cual es fundador desde 2010.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="victor-flores.jpg" alt="Víctor Flores" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-name">VÍCTOR FLORES</div>
+                        <div class="member-instrument">Contrabajo</div>
+                        <div class="member-bio">
+                            <p>Contrabajista mexicano, realizó estudios en la ahora Facultad de Música de la UNAM y en la Escuela de Perfeccionamiento Vida y Movimiento del Conjunto Cultural Ollin Yoliztli. Ha participado en cursos y clases magistrales impartidas por maestros como: Eugene Levinson, John Shaeffer, Mijail Stadiniscki, Lucy van Dale, entre otros.</p>
+                            <p>En 1992 gana como solista, la medalla Cynthia Woods dentro del Texas Music Festival. La embajada de Austria, en conjunto con la Academia Medalla Mozart A. C., le otorgan la Medalla Mozart en 2009.</p>
+                            <p>Ha ganado por concurso los puestos de contrabajista principal en la Orquesta de Cámara de Bellas Artes y en la Orquesta Filarmónica de la UNAM, de coprincipal en la Orquesta Filarmónica de la Ciudad de México, además de ser invitado como principal en la orquesta Sinfónica de Minería y de la Orquesta del Festival Mozart-Haydn.</p>
+                            <p>Ha sido invitado como solista en la Orquestas más prestigiadas del país. Víctor Flores es considerado como uno de los contrabajistas mexicanos más importantes de Latinoamérica por interpretar desde música Renacentista hasta música nueva y presentarse exitosamente en los principales foros y festivales de México y del extranjero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 ES PURiO JAZZ quarteto. Todos los derechos reservados.</p>
+            <p>Música que fusiona lo clásico con el jazz</p>
+        </footer>
+    </div>
+</body>
+</html>
