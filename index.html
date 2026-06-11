@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        /* Imágenes laterales fijas */
+        /* Imágenes laterales fijas con difuminado */
         .side-image-left {
             position: fixed;
             left: 0;
@@ -31,6 +31,8 @@
             background: url('fondo-izquierdo.jpg') center top no-repeat;
             background-size: cover;
             z-index: 0;
+            filter: blur(4px);  /* Desenfoque suave */
+            opacity: 0.65;      /* Transparencia para que no opaque el texto */
         }
 
         .side-image-right {
@@ -42,6 +44,8 @@
             background: url('fondo-derecho.jpg') center top no-repeat;
             background-size: cover;
             z-index: 0;
+            filter: blur(4px);  /* Desenfoque suave */
+            opacity: 0.65;      /* Transparencia para que no opaque el texto */
         }
 
         .container {
@@ -378,7 +382,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 40px;">💿 CD - "ES PURiO JAZZ"</h3>
+            <h3 style="margin-top: 40px;"> CD - "ES PURiO JAZZ"</h3>
             <div class="discography-grid">
                 <div class="discography-item">
                     <h4>Spotify</h4>
