@@ -21,7 +21,6 @@
             position: relative;
         }
 
-        /* Imágenes laterales fijas con difuminado */
         .side-image-left {
             position: fixed;
             left: 0;
@@ -31,8 +30,8 @@
             background: url('fondo-izquierdo.jpg') center top no-repeat;
             background-size: cover;
             z-index: 0;
-            filter: blur(2px);  /* Desenfoque suave */
-            opacity: 0.30;      /* Transparencia para que no opaque el texto */
+            filter: blur(2px);
+            opacity: 0.30;
         }
 
         .side-image-right {
@@ -44,8 +43,8 @@
             background: url('fondo-derecho.jpg') center top no-repeat;
             background-size: cover;
             z-index: 0;
-            filter: blur(2px);  /* Desenfoque suave */
-            opacity: 0.30;      /* Transparencia para que no opaque el texto */
+            filter: blur(2px);
+            opacity: 0.30;
         }
 
         .container {
@@ -301,6 +300,200 @@
             z-index: 1;
         }
 
+        /* Botón flotante de conciertos */
+        .concert-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(90, 103, 216, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .concert-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(90, 103, 216, 0.6);
+        }
+
+        .concert-button::before {
+            content: "🎵";
+            font-size: 1.3em;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(90, 103, 216, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(124, 58, 237, 0.7);
+            }
+        }
+
+        /* Modal de fechas de conciertos */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            color: #718096;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #5a67d8;
+        }
+
+        .modal-title {
+            color: #5a67d8;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #7c3aed;
+            padding-bottom: 15px;
+        }
+
+        .concert-list {
+            list-style: none;
+        }
+
+        .concert-item {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #5a67d8;
+            transition: all 0.3s ease;
+        }
+
+        .concert-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(90, 103, 216, 0.2);
+            border-left-color: #7c3aed;
+        }
+
+        .concert-date {
+            color: #7c3aed;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .concert-date::before {
+            content: "📅";
+            font-size: 1.2em;
+        }
+
+        .concert-venue {
+            color: #5a67d8;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .concert-details {
+            color: #718096;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .concert-highlight {
+            background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(90, 103, 216, 0.3);
+            animation: highlightPulse 2s infinite;
+        }
+
+        @keyframes highlightPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .concert-highlight .concert-date {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .concert-highlight .concert-venue {
+            color: #f0f4f8;
+            font-size: 1.2em;
+        }
+
         @media (max-width: 768px) {
             .members-grid {
                 grid-template-columns: 1fr;
@@ -327,11 +520,25 @@
             .side-image-right {
                 display: none;
             }
+
+            .concert-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                font-size: 1em;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .modal-title {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Imágenes laterales fijas -->
     <div class="side-image-left"></div>
     <div class="side-image-right"></div>
 
@@ -475,5 +682,67 @@
             <p>Música que fusiona lo clásico con el jazz</p>
         </footer>
     </div>
+
+    <!-- Botón flotante de conciertos -->
+    <button class="concert-button" onclick="openConcertModal()">
+        Próximos Conciertos
+    </button>
+
+    <!-- Modal de fechas de conciertos -->
+    <div id="concertModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeConcertModal()">&times;</button>
+            <h2 class="modal-title">🎺 Próximos Conciertos</h2>
+            
+            <div class="concert-highlight">
+                <div class="concert-date">29 de Julio de 2026</div>
+                <div class="concert-venue">¡Próximo Concierto!</div>
+                <div class="concert-details">
+                    No te pierdas nuestra próxima presentación. ¡Reserva tu lugar!
+                </div>
+            </div>
+
+            <ul class="concert-list">
+                <li class="concert-item">
+                    <div class="concert-date">29 de Julio de 2026</div>
+                    <div class="concert-venue">Por confirmar</div>
+                    <div class="concert-details">
+                        <p>ES PURiO JAZZ quarteto en concierto. Una noche de fusión entre lo clásico y el jazz.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+                <p style="color: #718096; font-size: 0.9em;">Para más información y reservas, contáctanos a través de nuestras redes sociales.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openConcertModal() {
+            document.getElementById('concertModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConcertModal() {
+            document.getElementById('concertModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById('concertModal');
+            if (event.target == modal) {
+                closeConcertModal();
+            }
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeConcertModal();
+            }
+        });
+    </script>
 </body>
 </html>
