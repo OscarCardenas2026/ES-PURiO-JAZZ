@@ -21,6 +21,7 @@
             position: relative;
         }
 
+        /* Imágenes laterales fijas con difuminado */
         .side-image-left {
             position: fixed;
             left: 0;
@@ -223,42 +224,59 @@
             color: #5a67d8;
         }
 
+        /* VIDEOS EMBEBIDOS */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-top: 20px;
         }
 
         .video-item {
             background: #f7fafc;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.2s;
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
 
         .video-item:hover {
-            background: #edf2f7;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(90, 103, 216, 0.2);
         }
 
-        .video-item a {
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 18px 20px;
+        }
+
+        .video-info h4 {
             color: #5a67d8;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            padding: 10px 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: all 0.2s;
+            margin-bottom: 8px;
+            font-size: 1.15em;
         }
 
-        .video-item a:hover {
-            background: #5a67d8;
-            color: white;
-            box-shadow: 0 4px 10px rgba(90, 103, 216, 0.3);
+        .video-info p {
+            color: #718096;
+            font-size: 0.9em;
+            margin: 0;
+            font-style: italic;
         }
 
         .social-links {
@@ -320,6 +338,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-family: inherit;
         }
 
         .concert-button:hover {
@@ -361,12 +380,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-content {
@@ -383,14 +398,8 @@
         }
 
         @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .modal-close {
@@ -403,6 +412,7 @@
             background: none;
             border: none;
             transition: color 0.2s;
+            font-family: inherit;
         }
 
         .modal-close:hover {
@@ -476,12 +486,8 @@
         }
 
         @keyframes highlightPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
 
         .concert-highlight .concert-date {
@@ -492,6 +498,15 @@
         .concert-highlight .concert-venue {
             color: #f0f4f8;
             font-size: 1.2em;
+        }
+
+        .no-concerts {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-style: italic;
+            background: #f7fafc;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
@@ -539,6 +554,7 @@
     </style>
 </head>
 <body>
+    <!-- Imágenes laterales fijas -->
     <div class="side-image-left"></div>
     <div class="side-image-right"></div>
 
@@ -578,15 +594,58 @@
             
             <h3>Videos</h3>
             <div class="video-grid">
+                
+                <!-- Video 1 -->
                 <div class="video-item">
-                    <a href="https://www.youtube.com/watch?v=eRG4sbXlM6Q" target="_blank">▶ Ver Video 1 en YouTube</a>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/eRG4sbXlM6Q?rel=0&modestbranding=1" 
+                            title="Video ES PURiO JAZZ 1"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Video 1</h4>
+                        <p>ES PURiO JAZZ quarteto</p>
+                    </div>
                 </div>
+
+                <!-- Video 2 -->
                 <div class="video-item">
-                    <a href="https://www.youtube.com/watch?v=zGqH7iy3jQw" target="_blank">▶ Ver Video 2 en YouTube</a>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/zGqH7iy3jQw?rel=0&modestbranding=1" 
+                            title="Video ES PURiO JAZZ 2"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Video 2</h4>
+                        <p>ES PURiO JAZZ quarteto</p>
+                    </div>
                 </div>
+
+                <!-- Video 3 -->
                 <div class="video-item">
-                    <a href="https://www.youtube.com/watch?v=c4NYX7ZzOlg" target="_blank">▶ Ver Video 3 en YouTube</a>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/c4NYX7ZzOlg?rel=0&modestbranding=1" 
+                            title="Video ES PURiO JAZZ 3"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Video 3</h4>
+                        <p>ES PURiO JAZZ quarteto</p>
+                    </div>
                 </div>
+
             </div>
 
             <h3 style="margin-top: 40px;"> CD - "ES PURiO JAZZ"</h3>
@@ -694,22 +753,8 @@
             <button class="modal-close" onclick="closeConcertModal()">&times;</button>
             <h2 class="modal-title">🎺 Próximos Conciertos</h2>
             
-            <div class="concert-highlight">
-                <div class="concert-date">29 de Julio de 2026</div>
-                <div class="concert-venue">¡Próximo Concierto!</div>
-                <div class="concert-details">
-                    No te pierdas nuestra próxima presentación. ¡Reserva tu lugar!
-                </div>
-            </div>
-
             <ul class="concert-list">
-                <li class="concert-item">
-                    <div class="concert-date">29 de Julio de 2026</div>
-                    <div class="concert-venue">Por confirmar</div>
-                    <div class="concert-details">
-                        <p>ES PURiO JAZZ quarteto en concierto. Una noche de fusión entre lo clásico y el jazz.</p>
-                    </div>
-                </li>
+                <li class="no-concerts">Próximamente se anunciarán nuevas fechas</li>
             </ul>
 
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
