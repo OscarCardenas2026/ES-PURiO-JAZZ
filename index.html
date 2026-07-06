@@ -183,75 +183,40 @@
             overflow-y: auto;
         }
 
-        /* NUEVO: Diseño mejorado para álbumes con portadas */
-        .album-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin: 25px 0;
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #5a67d8;
-            flex-wrap: wrap;
-        }
-
-        .album-cover {
-            flex-shrink: 0;
-            width: 180px;
-            height: 180px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .album-cover:hover {
-            transform: scale(1.05);
-        }
-
-        .album-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .album-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .album-title {
-            color: #5a67d8;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
         .discography-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .discography-item {
             background: #f7fafc;
-            padding: 12px 16px;
+            padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #5a67d8;
             transition: all 0.2s;
         }
 
         .discography-item:hover {
-            background: #edf2f7;
             transform: translateX(5px);
+            background: #edf2f7;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .discography-item h4 {
+            color: #5a67d8;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
         .discography-item a {
             color: #7c3aed;
             text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 500;
+            display: block;
+            margin: 8px 0;
+            font-size: 0.9em;
+            word-break: break-all;
         }
 
         .discography-item a:hover {
@@ -382,7 +347,7 @@
         }
 
         .concert-button::before {
-            content: "🎵";
+            content: "";
             font-size: 1.3em;
         }
 
@@ -510,9 +475,10 @@
             line-height: 1.5;
         }
 
+        /* === AQUÍ ESTÁ LA CORRECCIÓN PARA EL TEXTO BLANCO === */
         .concert-highlight {
             background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
-            color: white;
+            color: white !important; /* Forzamos blanco base */
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -526,14 +492,24 @@
         }
 
         .concert-highlight .concert-date {
-            color: white;
+            color: white !important; /* Blanco puro */
             font-size: 1.5em;
+            font-weight: bold;
         }
 
         .concert-highlight .concert-venue {
-            color: #f0f4f8;
+            color: white !important; /* Blanco puro (antes era gris/azul claro) */
             font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 600;
         }
+
+        .concert-highlight .concert-details {
+            color: rgba(255, 255, 255, 0.9) !important; /* Blanco con ligera transparencia */
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        /* ================================================ */
 
         .no-concerts {
             text-align: center;
@@ -584,16 +560,6 @@
 
             .modal-title {
                 font-size: 1.5em;
-            }
-
-            .album-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .album-cover {
-                width: 150px;
-                height: 150px;
             }
         }
     </style>
@@ -652,8 +618,8 @@
                         </iframe>
                     </div>
                     <div class="video-info">
-                        <h4>Africaine de Claude Bolling en la Sala Nezahualcóyotl del Centro Cultural Universitario</h4>
-                        <p>ES PURiO JAZZ quarteto</p>
+                        <h4>Africaine de Claude Bolling</h4>
+                        <p>Sala Nezahualcóyotl, CDMX</p>
                     </div>
                 </div>
 
@@ -669,8 +635,8 @@
                         </iframe>
                     </div>
                     <div class="video-info">
-                        <h4>No Messin' de Greg Carmichael y Miles Gilderdale en el Antiguo Colegio de San Ildefonso</h4>
-                        <p>ES PURiO JAZZ quarteto</p>
+                        <h4>No Messin' de Greg Carmichael</h4>
+                        <p>Antiguo Colegio de San Ildefonso</p>
                     </div>
                 </div>
 
@@ -686,43 +652,30 @@
                         </iframe>
                     </div>
                     <div class="video-info">
-                        <h4>Full House de Wes Montgomey en el Teatro Ángela Peralta en San Miguel de Allende</h4>
-                        <p>ES PURiO JAZZ quarteto</p>
+                        <h4>Full House de Wes Montgomery</h4>
+                        <p>Teatro Ángela Peralta, San Miguel de Allende</p>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Álbum 1: ES PURiO JAZZ -->
-            <div class="album-container">
-                <div class="album-cover">
-                    <img src="es-purio-jazz-cover.jpg" alt="Portada de ES PURiO JAZZ">
+            <h3 style="margin-top: 40px;"> CD - "ES PURiO JAZZ"</h3>
+            <div class="discography-grid">
+                <div class="discography-item">
+                    <h4>Spotify</h4>
+                    <a href="https://play.spotify.com/artist/5SOdPCfTYz8RkD6n7bL9iI?play=true&utm_source=open.spotify.com&utm_medium=open" target="_blank">Escuchar en Spotify</a>
                 </div>
-                <div class="album-info">
-                    <h3 class="album-title">CD - "ES PURiO JAZZ"</h3>
-                    <div class="discography-grid">
-                        <div class="discography-item">
-                            <a href="https://play.spotify.com/artist/5SOdPCfTYz8RkD6n7bL9iI?play=true&utm_source=open.spotify.com&utm_medium=open" target="_blank">🎧 Escuchar en Spotify</a>
-                        </div>
-                        <div class="discography-item">
-                            <a href="http://www.amazon.com/s/ref=nb_sb_ss_fb_0_9?url=search-alias%3Ddigital-music&field-keywords=es+purio+jazz&sprefix=es+purio+%2Cpopular%2C263" target="_blank">🛒 Comprar en Amazon</a>
-                        </div>
-                    </div>
+                <div class="discography-item">
+                    <h4>Amazon</h4>
+                    <a href="http://www.amazon.com/s/ref=nb_sb_ss_fb_0_9?url=search-alias%3Ddigital-music&field-keywords=es+purio+jazz&sprefix=es+purio+%2Cpopular%2C263" target="_blank">Comprar en Amazon</a>
                 </div>
             </div>
 
-            <!-- Álbum 2: Teine -->
-            <div class="album-container">
-                <div class="album-cover">
-                    <img src="teine-cover.jpg" alt="Portada de Teine">
-                </div>
-                <div class="album-info">
-                    <h3 class="album-title">💿 CD - "Teine"</h3>
-                    <div class="discography-grid">
-                        <div class="discography-item">
-                            <a href="https://open.spotify.com/intl-es/album/42AC0vaORiYDI0PywZw26s" target="_blank">🎧 Escuchar en Spotify</a>
-                        </div>
-                    </div>
+            <h3 style="margin-top: 30px;">💿 CD - "Teine"</h3>
+            <div class="discography-grid">
+                <div class="discography-item">
+                    <h4>Spotify</h4>
+                    <a href="https://open.spotify.com/intl-es/album/42AC0vaORiYDI0PywZw26s" target="_blank">Escuchar en Spotify</a>
                 </div>
             </div>
         </section>
@@ -809,24 +762,17 @@
     <div id="concertModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeConcertModal()">&times;</button>
-            <h2 class="modal-title">🎵 Próximos Conciertos</h2>
+            <h2 class="modal-title">🎺 Próximos Conciertos</h2>
             
             <!-- Concierto destacado -->
             <div class="concert-highlight">
-                <div class="concert-date">29 de Julio de 2026 a las 19:00h</div>
-                <div class="concert-venue">Museo de Arte Moderno</div>
+                <div class="concert-date">29 de Julio de 2026, 19:00 hrs</div>
+                <div class="concert-venue">Museo de Arte Moderno, CDMX</div>
                 <div class="concert-details">Noche de museos, entrada libre</div>
             </div>
 
             <ul class="concert-list">
                 <!-- Aquí puedes agregar más conciertos si los hay -->
-                <!--
-                <li class="concert-item">
-                    <div class="concert-date">15 de Agosto de 2026</div>
-                    <div class="concert-venue">Otro lugar</div>
-                    <div class="concert-details">Detalles</div>
-                </li>
-                -->
             </ul>
 
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
