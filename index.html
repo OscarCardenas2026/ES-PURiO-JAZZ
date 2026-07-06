@@ -748,20 +748,35 @@
     </button>
 
     <!-- Modal de fechas de conciertos -->
-    <div id="concertModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeConcertModal()">&times;</button>
-            <h2 class="modal-title">🎺 Próximos Conciertos</h2>
-            
-            <ul class="concert-list">
-                <li class="no-concerts">Próximamente se anunciarán nuevas fechas</li>
-            </ul>
+    <!-- Modal de fechas de conciertos -->
+<div id="concertModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeConcertModal()">&times;</button>
+        <h2 class="modal-title">🎺 Próximos Conciertos</h2>
+        
+        <!-- Concierto destacado -->
+        <div class="concert-highlight">
+            <div class="concert-date">29 de Julio de 2026</div>
+            <div class="concert-venue">[Nombre del lugar/sala]</div>
+            <div class="concert-details">[Programa o detalles del concierto]</div>
+        </div>
 
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-                <p style="color: #718096; font-size: 0.9em;">Para más información y reservas, contáctanos a través de nuestras redes sociales.</p>
-            </div>
+        <ul class="concert-list">
+            <!-- Aquí puedes agregar más conciertos si los hay -->
+            <!--
+            <li class="concert-item">
+                <div class="concert-date">15 de Agosto de 2026</div>
+                <div class="concert-venue">Otro lugar</div>
+                <div class="concert-details">Detalles</div>
+            </li>
+            -->
+        </ul>
+
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+            <p style="color: #718096; font-size: 0.9em;">Para más información y reservas, contáctanos a través de nuestras redes sociales.</p>
         </div>
     </div>
+</div>
 
     <script>
         function openConcertModal() {
