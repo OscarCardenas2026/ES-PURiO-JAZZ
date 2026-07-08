@@ -388,9 +388,9 @@
             background: white;
             padding: 40px;
             border-radius: 15px;
-            max-width: 600px;
+            max-width: 650px;
             width: 90%;
-            max-height: 80vh;
+            max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -475,10 +475,10 @@
             line-height: 1.5;
         }
 
-        /* === AQUÍ ESTÁ LA CORRECCIÓN PARA EL TEXTO BLANCO === */
+        /* === CONCIERTO DESTACADO CON IMAGEN === */
         .concert-highlight {
             background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
-            color: white !important; /* Forzamos blanco base */
+            color: white !important;
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -491,23 +491,57 @@
             50% { transform: scale(1.02); }
         }
 
+        .concert-highlight img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .concert-highlight img:hover {
+            transform: scale(1.02);
+        }
+
         .concert-highlight .concert-date {
-            color: white !important; /* Blanco puro */
-            font-size: 1.5em;
+            color: white !important;
+            font-size: 1.4em;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .concert-highlight .concert-venue {
-            color: white !important; /* Blanco puro (antes era gris/azul claro) */
-            font-size: 1.2em;
-            margin-top: 10px;
+            color: white !important;
+            font-size: 1.15em;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
         .concert-highlight .concert-details {
-            color: rgba(255, 255, 255, 0.9) !important; /* Blanco con ligera transparencia */
+            color: rgba(255, 255, 255, 0.95) !important;
             font-size: 1em;
-            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .concert-highlight .concert-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .concert-highlight .concert-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         /* ================================================ */
 
@@ -560,6 +594,10 @@
 
             .modal-title {
                 font-size: 1.5em;
+            }
+
+            .concert-highlight img {
+                max-width: 100%;
             }
         }
     </style>
@@ -762,13 +800,19 @@
     <div id="concertModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeConcertModal()">&times;</button>
-            <h2 class="modal-title">🎺 Próximos Conciertos</h2>
+            <h2 class="modal-title"> Próximos Conciertos</h2>
             
-            <!-- Concierto destacado -->
+            <!-- Concierto destacado con imagen -->
             <div class="concert-highlight">
+                <a href="https://view.flodesk.com/emails/6a2996201b7c0f42f6c84c88" target="_blank">
+                    <img src="concierto-museo.jpg" alt="Concierto ES PURiO JAZZ quarteto - Miércoles 29 de julio">
+                </a>
                 <div class="concert-date">Miércoles 29 de Julio de 2026, 19:00 hrs</div>
                 <div class="concert-venue">Museo de Arte Moderno, CDMX</div>
-                <div class="concert-details">Noche de museos, entrada libre</div>
+                <div class="concert-details">Noche de Museos - Entrada libre<br>Fusión de barroco y jazz</div>
+                <a href="https://view.flodesk.com/emails/6a2996201b7c0f42f6c84c88" target="_blank" class="concert-link">
+                    Ver anuncio completo →
+                </a>
             </div>
 
             <ul class="concert-list">
