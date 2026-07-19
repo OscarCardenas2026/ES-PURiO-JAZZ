@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 600px; /* Ancho ideal para lectura en celular */
+            max-width: 600px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -178,14 +178,87 @@
             background: #4c51bf;
         }
 
-        /* Ajustes para pantallas muy pequeñas */
+        /* BOTÓN DE DESCARGA PDF */
+        .btn-pdf {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #5a67d8;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(90, 103, 216, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pdf:hover {
+            background: #4c51bf;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 103, 216, 0.6);
+        }
+
+        /* Estilos para impresión/PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .container {
+                box-shadow: none !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .header {
+                background: #5a67d8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .badge {
+                background: #7c3aed !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .guest {
+                background: #fef3c7 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
         @media (max-width: 400px) {
             .header h1 { font-size: 1.5em; }
             .content { padding: 20px 15px; }
+            .btn-pdf {
+                top: 10px;
+                right: 10px;
+                padding: 10px 18px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- BOTÓN DE DESCARGA PDF -->
+    <button onclick="window.print()" class="btn-pdf no-print">
+        📄 Descargar PDF
+    </button>
 
     <div class="container">
         <!-- Encabezado -->
@@ -199,7 +272,7 @@
             <div class="date">📅 Miércoles 29 de Julio de 2026</div>
             <div class="location">📍 Museo de Arte Moderno, CDMX</div>
             <div>
-                <span class="badge">🎟️ Entrada libre</span>
+                <span class="badge">️ Entrada libre</span>
                 <span class="badge">⚠️ Cupo limitado</span>
             </div>
             <p style="margin-top: 10px; color: #718096; font-size: 0.9em;">Noche de Museos - 19:00 hrs</p>
@@ -233,7 +306,7 @@
                 <p><strong>Víctor Flores</strong> | Contrabajo</p>
                 
                 <div class="guest">
-                    <strong>🌟 Invitado especial:</strong><br>
+                    <strong> Invitado especial:</strong><br>
                     Fernando Elizalde de la Peña
                 </div>
             </div>
@@ -242,7 +315,7 @@
         <!-- Pie de página con botón -->
         <div class="footer">
             <p style="color: #718096; font-size: 0.9em; margin-bottom: 15px;">¡Te esperamos para una noche inolvidable de fusión!</p>
-            <a href="https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/" class="btn-main">Volver al sitio oficial</a>
+            <a href="https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/" class="btn-main no-print">Volver al sitio oficial</a>
         </div>
     </div>
 
