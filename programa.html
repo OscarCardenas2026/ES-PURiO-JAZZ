@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa del Concierto - ES PURiO JAZZ quarteto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px; /* Ancho ideal para lectura en celular */
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            background: #f7fafc;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .info-box .date {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #5a67d8;
+            margin-bottom: 5px;
+        }
+
+        .info-box .location {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .info-box .badge {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .content {
+            padding: 30px 25px;
+        }
+
+        .section-title {
+            color: #7c3aed;
+            font-size: 1.3em;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .program-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .program-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-list li:last-child {
+            border-bottom: none;
+        }
+
+        .song-title {
+            font-weight: bold;
+            color: #2d3748;
+            font-size: 1.05em;
+        }
+
+        .composer {
+            color: #718096;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 2px;
+        }
+
+        .personnel {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .personnel p {
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .personnel strong {
+            color: #5a67d8;
+        }
+
+        .guest {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 15px;
+            border: 1px solid #f59e0b;
+        }
+
+        .guest strong {
+            color: #92400e;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f7fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: #5a67d8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background: #4c51bf;
+        }
+
+        /* Ajustes para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .header h1 { font-size: 1.5em; }
+            .content { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <h1>ES PURiO JAZZ</h1>
+            <div class="subtitle">quarteto</div>
+        </div>
+
+        <!-- Caja de Información Principal -->
+        <div class="info-box">
+            <div class="date">📅 Miércoles 29 de Julio de 2026</div>
+            <div class="location">📍 Museo de Arte Moderno, CDMX</div>
+            <div>
+                <span class="badge">🎟️ Entrada libre</span>
+                <span class="badge">⚠️ Cupo limitado</span>
+            </div>
+            <p style="margin-top: 10px; color: #718096; font-size: 0.9em;">Noche de Museos - 19:00 hrs</p>
+        </div>
+
+        <div class="content">
+            <!-- Programa -->
+            <h2 class="section-title">Programa</h2>
+            <ul class="program-list">
+                <li><span class="song-title">Hispanic Dance</span><span class="composer">Claude Bolling</span></li>
+                <li><span class="song-title">Mexicaine</span><span class="composer">Claude Bolling</span></li>
+                <li><span class="song-title">A Little Bimpin'</span><span class="composer">Lee Ritenour</span></li>
+                <li><span class="song-title">A Shot in the Dark</span><span class="composer">Henry Mancini</span></li>
+                <li><span class="song-title">Invention</span><span class="composer">Claude Bolling</span></li>
+                <li><span class="song-title">Classical Gas</span><span class="composer">Mason Williams</span></li>
+                <li><span class="song-title">La Tierra de los Vivientes</span><span class="composer">Mireya González</span></li>
+                <li><span class="song-title">Asa</span><span class="composer">Djavan</span></li>
+                <li><span class="song-title">Rhapsodic</span><span class="composer">Claude Bolling</span></li>
+                <li><span class="song-title">Full House</span><span class="composer">Wes Montgomery</span></li>
+                <li><span class="song-title">Apuntes 2012</span><span class="composer">Óscar Cárdenas</span></li>
+                <li><span class="song-title">Africaine</span><span class="composer">Claude Bolling</span></li>
+                <li><span class="song-title">No Messin'</span><span class="composer">Greg Carmichael y Miles Gilderdale</span></li>
+            </ul>
+
+            <!-- Integrantes -->
+            <h2 class="section-title">Intérpretes</h2>
+            <div class="personnel">
+                <p><strong>Mireya González</strong> | Piano</p>
+                <p><strong>Óscar Cárdenas</strong> | Guitarra</p>
+                <p><strong>Bogdan Chávez</strong> | Batería</p>
+                <p><strong>Víctor Flores</strong> | Contrabajo</p>
+                
+                <div class="guest">
+                    <strong>🌟 Invitado especial:</strong><br>
+                    Fernando Elizalde de la Peña
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página con botón -->
+        <div class="footer">
+            <p style="color: #718096; font-size: 0.9em; margin-bottom: 15px;">¡Te esperamos para una noche inolvidable de fusión!</p>
+            <a href="https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/" class="btn-main">Volver al sitio oficial</a>
+        </div>
+    </div>
+
+</body>
+</html>
