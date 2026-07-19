@@ -21,7 +21,6 @@
             position: relative;
         }
 
-        /* Imágenes laterales fijas con difuminado */
         .side-image-left {
             position: fixed;
             left: 0;
@@ -224,7 +223,6 @@
             color: #5a67d8;
         }
 
-        /* VIDEOS EMBEBIDOS */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -248,7 +246,7 @@
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -318,7 +316,6 @@
             z-index: 1;
         }
 
-        /* Botón flotante de conciertos */
         .concert-button {
             position: fixed;
             bottom: 30px;
@@ -347,20 +344,15 @@
         }
 
         .concert-button::before {
-            content: "";
+            content: "🎵";
             font-size: 1.3em;
         }
 
         @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 8px 25px rgba(90, 103, 216, 0.4);
-            }
-            50% {
-                box-shadow: 0 8px 35px rgba(124, 58, 237, 0.7);
-            }
+            0%, 100% { box-shadow: 0 8px 25px rgba(90, 103, 216, 0.4); }
+            50% { box-shadow: 0 8px 35px rgba(124, 58, 237, 0.7); }
         }
 
-        /* Modal de fechas de conciertos */
         .modal {
             display: none;
             position: fixed;
@@ -458,7 +450,7 @@
         }
 
         .concert-date::before {
-            content: "";
+            content: "📅";
             font-size: 1.2em;
         }
 
@@ -475,7 +467,6 @@
             line-height: 1.5;
         }
 
-        /* === CONCIERTO DESTACADO CON IMAGEN === */
         .concert-highlight {
             background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%);
             color: white !important;
@@ -543,7 +534,6 @@
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        /* ================================================ */
 
         .no-concerts {
             text-align: center;
@@ -555,55 +545,20 @@
         }
 
         @media (max-width: 768px) {
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .title-main {
-                font-size: 1.8em;
-            }
-            
-            .title-sub {
-                font-size: 1em;
-                letter-spacing: 5px;
-            }
-            
-            h2 {
-                font-size: 1.5em;
-            }
-            
-            section {
-                padding: 20px;
-            }
-
-            .side-image-left,
-            .side-image-right {
-                display: none;
-            }
-
-            .concert-button {
-                bottom: 20px;
-                right: 20px;
-                padding: 15px 20px;
-                font-size: 1em;
-            }
-
-            .modal-content {
-                padding: 25px;
-            }
-
-            .modal-title {
-                font-size: 1.5em;
-            }
-
-            .concert-highlight img {
-                max-width: 100%;
-            }
+            .members-grid { grid-template-columns: 1fr; }
+            .title-main { font-size: 1.8em; }
+            .title-sub { font-size: 1em; letter-spacing: 5px; }
+            h2 { font-size: 1.5em; }
+            section { padding: 20px; }
+            .side-image-left, .side-image-right { display: none; }
+            .concert-button { bottom: 20px; right: 20px; padding: 15px 20px; font-size: 1em; }
+            .modal-content { padding: 25px; }
+            .modal-title { font-size: 1.5em; }
+            .concert-highlight img { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- Imágenes laterales fijas -->
     <div class="side-image-left"></div>
     <div class="side-image-right"></div>
 
@@ -638,14 +593,17 @@
             </div>
         </section>
 
-        <!-- SECCIÓN QR DEL CONCIERTO - NUEVA -->
+        <!-- SECCIÓN QR DEL CONCIERTO (MÉTODO SIMPLE Y SEGURO) -->
         <section id="qr-concierto" style="background: linear-gradient(135deg, #5a67d8 0%, #7c3aed 100%); padding: 40px 20px; text-align: center; margin: 30px 0; border-radius: 10px; box-shadow: 0 10px 30px rgba(90, 103, 216, 0.2);">
             <h2 style="color: white; margin-bottom: 15px; font-size: 1.8em;">📱 Escanea el QR del Concierto</h2>
             <p style="color: rgba(255,255,255,0.95); margin-bottom: 25px; font-size: 1.1em; text-align: center;">
                 <strong>Miércoles 29 de Julio - Museo de Arte Moderno</strong><br>
                 19:00 hrs - Entrada libre - Cupo limitado
             </p>
-            <div id="qrcode" style="background: white; padding: 20px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></div>
+            <!-- Aquí está el QR generado como imagen directa, sin scripts que fallen -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/programa.html" 
+                 alt="Escanea para ver el programa del concierto" 
+                 style="width: 250px; height: 250px; display: block; margin: 0 auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background: white; padding: 10px;">
             <p style="color: rgba(255,255,255,0.9); margin-top: 20px; font-size: 1em; font-style: italic;">
                 Escanea para ver el programa completo
             </p>
@@ -654,61 +612,35 @@
 
         <section id="discography">
             <h2>Videos y Discografía</h2>
-            
             <h3>Videos</h3>
             <div class="video-grid">
-                
-                <!-- Video 1 -->
                 <div class="video-item">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/eRG4sbXlM6Q?rel=0&modestbranding=1" 
-                            title="Video ES PURiO JAZZ 1"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/eRG4sbXlM6Q?rel=0&modestbranding=1" title="Video ES PURiO JAZZ 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h4>Africaine de Claude Bolling</h4>
                         <p>Sala Nezahualcóyotl, CDMX</p>
                     </div>
                 </div>
-
-                <!-- Video 2 -->
                 <div class="video-item">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/zGqH7iy3jQw?rel=0&modestbranding=1" 
-                            title="Video ES PURiO JAZZ 2"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/zGqH7iy3jQw?rel=0&modestbranding=1" title="Video ES PURiO JAZZ 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h4>No Messin' de Greg Carmichael</h4>
                         <p>Antiguo Colegio de San Ildefonso</p>
                     </div>
                 </div>
-
-                <!-- Video 3 -->
                 <div class="video-item">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/c4NYX7ZzOlg?rel=0&modestbranding=1" 
-                            title="Video ES PURiO JAZZ 3"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/c4NYX7ZzOlg?rel=0&modestbranding=1" title="Video ES PURiO JAZZ 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h4>Full House de Wes Montgomery</h4>
                         <p>Teatro Ángela Peralta, San Miguel de Allende</p>
                     </div>
                 </div>
-
             </div>
 
             <h3 style="margin-top: 40px;"> CD - "ES PURiO JAZZ"</h3>
@@ -796,8 +728,7 @@
         <footer>
             <div style="text-align: center; margin-bottom: 20px;">
                 <a href="https://info.flagcounter.com/45Sr">
-                    <img src="https://s01.flagcounter.com/count/45Sr/bg_F7FAFC/txt_5A67D8/border_E2E8F0/columns_5/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" 
-                         alt="Flag Counter" border="0">
+                    <img src="https://s01.flagcounter.com/count/45Sr/bg_F7FAFC/txt_5A67D8/border_E2E8F0/columns_5/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
                 </a>
             </div>
             <p>&copy; 2026 ES PURiO JAZZ quarteto. Todos los derechos reservados.</p>
@@ -814,9 +745,8 @@
     <div id="concertModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeConcertModal()">&times;</button>
-            <h2 class="modal-title"> Próximos Conciertos</h2>
+            <h2 class="modal-title">🎺 Próximos Conciertos</h2>
             
-            <!-- Concierto destacado con imagen -->
             <div class="concert-highlight">
                 <a href="https://view.flodesk.com/emails/6a2996201b7c0f42f6c84c88" target="_blank">
                     <img src="concierto-museo.jpg" alt="Concierto ES PURiO JAZZ quarteto - Miércoles 29 de julio">
@@ -839,33 +769,8 @@
         </div>
     </div>
 
-        <!-- Script para generar QR automáticamente -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <!-- Script SIMPLE solo para el modal (Sin librerías externas de QR) -->
     <script>
-        // Esperar a que el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Generar QR automáticamente
-            const qrUrl = 'https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/programa.html';
-            
-            // Verificar que el elemento existe
-            const qrElement = document.getElementById('qrcode');
-            if (qrElement && typeof QRCode !== 'undefined') {
-                QRCode.toCanvas(qrElement, qrUrl, {
-                    width: 250,
-                    margin: 2,
-                    color: {
-                        dark: '#5a67d8',
-                        light: '#ffffff'
-                    }
-                });
-            } else if (!qrElement) {
-                console.error('No se encontró el elemento #qrcode');
-            } else if (typeof QRCode === 'undefined') {
-                console.error('La librería QRCode no se cargó');
-            }
-        });
-
-        // Funciones del modal
         function openConcertModal() {
             document.getElementById('concertModal').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -876,7 +781,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Cerrar modal al hacer clic fuera del contenido
         window.onclick = function(event) {
             const modal = document.getElementById('concertModal');
             if (event.target == modal) {
@@ -884,7 +788,6 @@
             }
         }
 
-        // Cerrar modal con tecla Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeConcertModal();
