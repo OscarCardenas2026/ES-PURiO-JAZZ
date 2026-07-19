@@ -839,17 +839,29 @@
         </div>
     </div>
 
-    <!-- Script para generar QR automáticamente -->
+        <!-- Script para generar QR automáticamente -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
     <script>
-        // Generar QR automáticamente
-        const qrUrl = 'https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/programa.html';
-        QRCode.toCanvas(document.getElementById('qrcode'), qrUrl, {
-            width: 250,
-            margin: 2,
-            color: {
-                dark: '#5a67d8',
-                light: '#ffffff'
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generar QR automáticamente
+            const qrUrl = 'https://oscarcardenas2026.github.io/ES-PURiO-JAZZ/programa.html';
+            
+            // Verificar que el elemento existe
+            const qrElement = document.getElementById('qrcode');
+            if (qrElement && typeof QRCode !== 'undefined') {
+                QRCode.toCanvas(qrElement, qrUrl, {
+                    width: 250,
+                    margin: 2,
+                    color: {
+                        dark: '#5a67d8',
+                        light: '#ffffff'
+                    }
+                });
+            } else if (!qrElement) {
+                console.error('No se encontró el elemento #qrcode');
+            } else if (typeof QRCode === 'undefined') {
+                console.error('La librería QRCode no se cargó');
             }
         });
 
