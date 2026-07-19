@@ -9,7 +9,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-            color: #1a202c; /* Texto casi negro */
+            color: #1a202c;
             line-height: 1.6;
             min-height: 100vh;
             padding: 20px;
@@ -23,7 +23,7 @@
             overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%); /* Azul marino a morado oscuro */
+            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
             color: white;
             text-align: center;
             padding: 30px 20px;
@@ -41,11 +41,46 @@
         .program-list li:last-child { border-bottom: none; }
         .song-title { font-weight: 800; color: #1a202c; font-size: 1.05em; }
         .composer { color: #2d3748; font-style: italic; font-size: 0.95em; margin-top: 2px; font-weight: 600; }
-        .personnel { background: #fafafa; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        .personnel p { margin-bottom: 8px; font-size: 1em; color: #1a202c; }
-        .personnel strong { color: #1e3a8a; font-weight: 800; }
-        .guest { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 15px; border-radius: 10px; text-align: center; margin-top: 15px; border: 1px solid #f59e0b; }
-        .guest strong { color: #92400e; font-size: 1.1em; font-weight: 800; }
+        
+        /* ESTILOS DE INTÉRPRETES ACTUALIZADOS */
+        .personnel-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); /* Recuadro amarillo */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #f59e0b;
+            text-align: center;
+        }
+        .personnel-box h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .personnel-box p {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #1a202c;
+            font-weight: 600;
+        }
+        .guest-plain {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #cbd5e0;
+        }
+        .guest-plain strong {
+            color: #4c1d95;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .guest-plain span {
+            color: #2d3748;
+            font-size: 1em;
+        }
+
         .footer { text-align: center; padding: 20px; background: #f7fafc; border-top: 1px solid #e2e8f0; }
         .btn-main { display: inline-block; background: #1e3a8a; color: white; text-decoration: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; margin-top: 10px; transition: background 0.3s; }
         .btn-main:hover { background: #172554; }
@@ -59,7 +94,7 @@
             .container { box-shadow: none !important; max-width: 100% !important; margin: 0 !important; }
             .header { background: #1e3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .badge { background: #4c1d95 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .guest { background: #fef3c7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .personnel-box { background: #fef3c7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
         @media (max-width: 400px) {
             .header h1 { font-size: 1.5em; }
@@ -80,8 +115,8 @@
         </div>
 
         <div class="info-box">
-            <div class="date">📅 Miércoles 29 de Julio de 2026</div>
-            <div class="location"> Museo de Arte Moderno, CDMX</div>
+            <div class="date"> Miércoles 29 de Julio de 2026</div>
+            <div class="location">📍 Museo de Arte Moderno, CDMX</div>
             <div>
                 <span class="badge">🎟️ Entrada libre</span>
                 <span class="badge">⚠️ Cupo limitado</span>
@@ -94,7 +129,7 @@
             <ul class="program-list">
                 <li><span class="song-title">Hispanic Dance</span><span class="composer">Claude Bolling</span></li>
                 <li><span class="song-title">Mexicaine</span><span class="composer">Claude Bolling</span></li>
-                <li><span class="song-title">A Little Bumpin'</span><span class="composer">Lee Ritenour</span></li>
+                <li><span class="song-title">A Little Bimpin'</span><span class="composer">Lee Ritenour</span></li>
                 <li><span class="song-title">A Shot in the Dark</span><span class="composer">Henry Mancini</span></li>
                 <li><span class="song-title">Invention</span><span class="composer">Claude Bolling</span></li>
                 <li><span class="song-title">Classical Gas</span><span class="composer">Mason Williams</span></li>
@@ -107,18 +142,32 @@
                 <li><span class="song-title">No Messin'</span><span class="composer">Greg Carmichael y Miles Gilderdale</span></li>
             </ul>
 
+            <!-- SECCIÓN DE INTÉRPRETES ACTUALIZADA -->
             <h2 class="section-title">Intérpretes</h2>
-            <div class="personnel">
+            
+            <!-- Recuadro para el Cuarteto -->
+            <div class="personnel-box">
+                <h3>ES PURiO JAZZ quarteto</h3>
                 <p><strong>Mireya González</strong> | Piano</p>
                 <p><strong>Óscar Cárdenas</strong> | Guitarra</p>
                 <p><strong>Bogdan Chávez</strong> | Batería</p>
                 <p><strong>Víctor Flores</strong> | Contrabajo</p>
-                
-                <div class="guest">
-                    <strong>🌟 Invitado especial:</strong><br>
-                    Fernando Elizalde de la Peña, contrabajo
-                </div>
             </div>
+
+            <!-- Invitado sin recuadro -->
+            <div class="guest-plain">
+                <strong>🌟 Invitado especial:</strong>
+                <span>Fernando Elizalde de la Peña, contrabajo</span>
+            </div>
+            
+            <!-- ESPACIO PARA FOTOS (Ejemplo) -->
+            <!-- 
+            <div style="margin-top: 30px; text-align: center;">
+                <p style="margin-bottom: 15px; color: #718096; font-style: italic;">Fotos del ensayo / grupo</p>
+                <img src="images/foto-grupo.jpg" alt="Foto del grupo" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div> 
+            -->
+
         </div>
 
         <div class="footer">
